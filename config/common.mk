@@ -41,6 +41,19 @@ $(foreach f,$(wildcard vendor/aosap/prebuilt/common/etc/init/*.rc),\
 PRODUCT_COPY_FILES += \
     vendor/aosap/prebuilt/common/lib/content-types.properties:$(TARGET_COPY_OUT_SYSTEM)/lib/content-types.properties
 
+# Backup Tool
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/aosap/build/tools/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/aosap/build/tools/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/aosap/build/tools/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+else
+PRODUCT_COPY_FILES += \
+    vendor/aosap/build/tools/backuptool.sh:install/bin/backuptool.sh \
+    vendor/aosap/build/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/aosap/build/tools/50-cm.sh:system/addon.d/50-cm.sh
+endif
+
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
     vendor/aosap/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
