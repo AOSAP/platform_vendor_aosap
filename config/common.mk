@@ -200,5 +200,12 @@ DEVICE_PACKAGE_OVERLAYS += vendor/aosap/overlay/common
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/aosap/build/target/product/security/aosap
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/aosap/build/tools/backuptool.sh:install/bin/backuptool.sh \
+    vendor/aosap/build/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/aosap/build/tools/50-cm.sh:system/addon.d/50-cm.sh
+
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/aosap/config/partner_gms.mk
