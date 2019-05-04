@@ -53,6 +53,10 @@ PRODUCT_COPY_FILES += \
     vendor/aosap/build/tools/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
+# Copy LOS LiveDisplay Permissions
+PRODUCT_COPY_FILES += \
+    vendor/aosap/config/permissions/privapp-permissions-custom.xml:system/etc/permissions/privapp-permissions-custom.xml
+
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
     vendor/aosap/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
