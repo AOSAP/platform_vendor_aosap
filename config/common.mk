@@ -1,6 +1,8 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
+include vendor/aosap/build/core/main_version.mk
+
 PRODUCT_BRAND ?= AOSAP
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
