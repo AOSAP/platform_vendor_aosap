@@ -54,10 +54,6 @@ PRODUCT_COPY_FILES += \
     vendor/aosap/build/tools/50-cm.sh:system/addon.d/50-cm.sh
 endif
 
-# system mount
-PRODUCT_COPY_FILES += \
-    vendor/aosap/build/tools/system-mount.sh:install/bin/system-mount.sh
-
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
     vendor/aosap/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
