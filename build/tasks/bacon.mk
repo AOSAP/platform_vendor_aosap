@@ -16,7 +16,7 @@
 # -----------------------------------------------------------------
 # AOSAP OTA update package
 
-AOSAP_TARGET_PACKAGE := $(PRODUCT_OUT)/AOSAP-$(AOSAP_VERSION).zip
+AOSAP_TARGET_PACKAGE := $(PRODUCT_OUT)/$(AOSAP_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
