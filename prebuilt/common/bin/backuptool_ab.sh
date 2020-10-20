@@ -5,7 +5,7 @@
 
 export S=/system
 export C=/postinstall/tmp/backupdir
-export V=17.1
+export V=Eleven
 
 export ADDOND_VERSION=2
 
