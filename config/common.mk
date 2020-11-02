@@ -42,16 +42,16 @@ PRODUCT_COPY_FILES += \
     vendor/aosap/prebuilt/common/lib/content-types.properties:$(TARGET_COPY_OUT_SYSTEM)/lib/content-types.properties
 
 # Backup Tool
-ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/aosap/build/tools/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/aosap/build/tools/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/aosap/build/tools/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
-else
-PRODUCT_COPY_FILES += \
-    vendor/aosap/build/tools/backuptool.sh:install/bin/backuptool.sh \
-    vendor/aosap/build/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/aosap/build/tools/backuptool.sh:$(TARGET_COPY_OUT_SYSTEM)/install/bin/backuptool.sh \
+    vendor/aosap/build/tools/backuptool.functions:$(TARGET_COPY_OUT_SYSTEM)/install/bin/backuptool.functions \
     vendor/aosap/build/tools/50-aosap.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-aosap.sh
+
+ifneq ($(AB_OTA_PARTITIONS),)
+PRODUCT_COPY_FILES += \
+    vendor/aosap/build/tools/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/aosap/build/tools/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/aosap/build/tools/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
 # Enable Android Beam on all targets
