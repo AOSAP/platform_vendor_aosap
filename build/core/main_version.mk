@@ -15,4 +15,5 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
     ro.aosap.version=$(AOSAP_VERSION) \
     ro.mod.version=$(AOSAP_BUILD_TYPE)-$(AOSAP_BASE_VERSION)-$(BUILD_DATE) \
-    ro.aosap.fingerprint=$(ROM_FINGERPRINT)
+    ro.aosap.fingerprint=$(ROM_FINGERPRINT) \
+    ro.modversion=Eleven
