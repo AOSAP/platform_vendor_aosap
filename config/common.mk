@@ -127,7 +127,8 @@ PRODUCT_PACKAGES += \
 #AOSAP
 PRODUCT_PACKAGES += \
     ThemePicker \
-    AosapThemesStub
+    AosapThemesStub \
+    Updater
 
 #OmniJaws
 PRODUCT_PACKAGES += \
