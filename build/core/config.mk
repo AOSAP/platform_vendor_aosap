@@ -15,7 +15,3 @@
 
 # Rules for QCOM targets
 include $(TOPDIR)vendor/aosap/build/core/qcom_target.mk
-
-ifneq ($(TARGET_BUILD_VARIANT),user)
-SELINUX_IGNORE_NEVERALLOWS := true
-endif
