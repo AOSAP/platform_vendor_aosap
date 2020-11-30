@@ -203,6 +203,11 @@ PRODUCT_PACKAGES += \
 endif
 endif
 
+ifeq ($(config_needCustomFODView),true)
+PRODUCT_PACKAGES += \
+    FodAnimationResources
+endif
+
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
