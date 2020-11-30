@@ -214,5 +214,10 @@ DEVICE_PACKAGE_OVERLAYS += vendor/aosap/overlay/common
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/aosap/build/target/product/security/aosap
 
+ifeq ($(EXTRA_FOD_ANIMATIONS),true)
+PRODUCT_PACKAGES += \
+    FodAnimationResources
+endif
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/aosap/config/partner_gms.mk
