@@ -203,6 +203,9 @@ PRODUCT_PACKAGES += \
 endif
 endif
 
+PRODUCT_PACKAGES += \
+    FodAnimationResources
+
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
