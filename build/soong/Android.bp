@@ -521,3 +521,20 @@ stagefright_qcom_legacy {
         },
     },
 }
+
+soong_config_module_type {
+    name: "display_intf_headers_ext",
+    module_type: "cc_defaults",
+    config_namespace: "aosapQcomVars",
+    bool_variables: ["uses_qcom_old_display_hal"],
+    properties: ["header_libs"],
+}
+
+display_intf_headers_ext {
+    name: "display_intf_headers_qssi",
+    soong_config_variables: {
+        uses_qcom_old_display_hal: {
+            header_libs: ["display_intf_headers_sf"],
+        },
+    },
+}
