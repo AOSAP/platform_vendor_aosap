@@ -27,7 +27,7 @@ else
 QSSI_SUPPORTED_PLATFORMS += msm8953
 endif
 
-ifeq ($(TARGET_USES_UM_4_19),true)
+ifneq (, $(filter true, $(TARGET_USES_UM_4_19) $(TARGET_USES_UM_4_9)))
     QSSI_SUPPORTED_PLATFORMS += $(TARGET_BOARD_PLATFORM)
 endif
 
