@@ -1,10 +1,5 @@
-# Inherit common mobile Lineage stuff
-$(call inherit-product, vendor/lineage/config/common.mk)
-
-# Default notification/alarm sounds
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.notification_sound=Argon.ogg \
-    ro.config.alarm_alert=Hassium.ogg
+# Inherit common mobile Aosap stuff
+$(call inherit-product, vendor/aosap/config/common.mk)
 
 # Apps
 PRODUCT_PACKAGES += \
@@ -34,20 +29,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     TrebuchetQuickStep
 endif
-
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
-ifneq ($(WITH_LINEAGE_CHARGER),false)
-PRODUCT_PACKAGES += \
-    lineage_charger_animation
-endif
-
-# Customizations
-PRODUCT_PACKAGES += \
-    LineageNavigationBarNoHint \
-    NavigationBarMode2ButtonOverlay
 
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \

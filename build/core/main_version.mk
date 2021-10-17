@@ -4,22 +4,24 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 endif
 
-# LineageOS System Version
-ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.lineage.version=$(LINEAGE_VERSION) \
-    ro.lineage.releasetype=$(LINEAGE_BUILDTYPE) \
-    ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.modversion=$(LINEAGE_VERSION) \
-    ro.lineagelegal.url=https://lineageos.org/legal
+# Versioning System
+AOSAP_BASE_VERSION = Twelve
 
-# LineageOS Platform Display Version
-ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.lineage.display.version=$(LINEAGE_DISPLAY_VERSION)
+ifndef AOSAP_BUILD_TYPE
+    AOSAP_BUILD_TYPE := UNOFFICIAL
+endif
 
-# LineageOS Platform SDK Version
-ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.lineage.build.version.plat.sdk=$(LINEAGE_PLATFORM_SDK_VERSION)
+# Set all versions
+BUILD_DATE := $(shell date -u +%Y%m%d)
+BUILD_TIME := $(shell date -u +%H%M)
+AOSAP_VERSION := $(TARGET_PRODUCT)-$(AOSAP_BASE_VERSION)-$(BUILD_DATE)-$(BUILD_TIME)-$(AOSAP_BUILD_TYPE)
+BUILD_DATE_TIME := $(BUILD_TIME)$(BUILD_DATE)
+TARGET_BACON_NAME := $(AOSAP_VERSION)
+ROM_FINGERPRINT := AOSAP/$(PLATFORM_VERSION)/$(AOSAP_BUILD_TYPE)/$(BUILD_DATE)$(BUILD_TIME)
 
-# LineageOS Platform Internal Version
-ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.lineage.build.version.plat.rev=$(LINEAGE_PLATFORM_REV)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    BUILD_DISPLAY_ID=$(BUILD_ID) \
+    ro.aosap.version=$(AOSAP_VERSION) \
+    ro.build.datetime=$(BUILD_DATE_TIME) \
+    ro.mod.version=$(AOSAP_BUILD_TYPE)-$(AOSAP_BASE_VERSION)-$(BUILD_DATE) \
+    ro.aosap.fingerprint=$(ROM_FINGERPRINT)
