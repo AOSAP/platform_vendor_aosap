@@ -1,5 +1,5 @@
-# Inherit common mobile Lineage stuff
-$(call inherit-product, vendor/lineage/config/common.mk)
+# Inherit common mobile Aosap stuff
+$(call inherit-product, vendor/aosap/config/common.mk)
 
 # Default notification/alarm sounds
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -39,22 +39,17 @@ endif
 PRODUCT_PACKAGES += \
     charger_res_images
 
-ifneq ($(WITH_LINEAGE_CHARGER),false)
-PRODUCT_PACKAGES += \
-    lineage_charger_animation
-endif
-
 # Customizations
-PRODUCT_PACKAGES += \
-    IconShapePebbleOverlay \
-    IconShapeRoundedRectOverlay \
-    IconShapeSquareOverlay \
-    IconShapeSquircleOverlay \
-    IconShapeTaperedRectOverlay \
-    IconShapeTeardropOverlay \
-    IconShapeVesselOverlay \
-    LineageNavigationBarNoHint \
-    NavigationBarMode2ButtonOverlay
+# PRODUCT_PACKAGES += \
+#    IconShapePebbleOverlay \
+#    IconShapeRoundedRectOverlay \
+#    IconShapeSquareOverlay \
+#    IconShapeSquircleOverlay \
+#    IconShapeTaperedRectOverlay \
+#    IconShapeTeardropOverlay \
+#    IconShapeVesselOverlay \
+#    LineageNavigationBarNoHint \
+#    NavigationBarMode2ButtonOverlay
 
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
