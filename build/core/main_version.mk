@@ -7,6 +7,10 @@ endif
 # Versioning System
 AOSAP_BASE_VERSION = Thirteen
 
+ifndef AOSAP_BUILD_TYPE
+    AOSAP_BUILD_TYPE := UNOFFICIAL
+endif
+
 # Set all versions
 BUILD_DATE := $(shell date -u +%Y%m%d)
 BUILD_TIME := $(shell date -u +%H%M)
